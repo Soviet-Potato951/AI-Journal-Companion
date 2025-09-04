@@ -19,7 +19,7 @@ fun SortSectionApply(
 ) {
     var sortMethod by rememberSaveable { mutableStateOf(SortMethod.INSERTION) }
     var expanded by remember { mutableStateOf(false) }
-    var sortUtils = remember { SortUtils() }
+    val sortUtils = remember { SortUtils() }
 
 
     Row(
@@ -31,7 +31,7 @@ fun SortSectionApply(
                 Text("Sort: ${sortMethod.name}")
             }
             DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
-                SortMethod.values().forEach { m ->
+                SortMethod.entries.forEach { m ->
                     DropdownMenuItem(
                         text = { Text(m.name) },
                         onClick = { sortMethod = m; expanded = false }

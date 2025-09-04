@@ -51,7 +51,7 @@ object PieChart {
         )
 
         Canvas(
-            modifier = Modifier.Companion
+            modifier = Modifier
                 .fillMaxWidth()
                 .height(height)
                 .padding(16.dp)

@@ -21,7 +21,7 @@ import com.example.aijournalcompanion.ui.chart.PieChart  // add this import
 fun MainScreen() {
     var emotionHistory by remember { mutableStateOf(listOf<EmotionEntry>()) }
     var lastResponse by remember { mutableStateOf<AnalysisResponse?>(null) }
-    var listVersion by remember { mutableStateOf(0) }
+    var listVersion by remember { mutableIntStateOf(0) }
 
     // NEW: state to control the chart dialog
     var showPieChart by remember { mutableStateOf(false) }
@@ -31,7 +31,7 @@ fun MainScreen() {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        AnalyzeBar { res: AnalysisResponse, rawText: String ->
+        AnalyzeBar { res: AnalysisResponse, _: String ->
             lastResponse = res
             val entry = EmotionEntry(
                 id = System.currentTimeMillis(),
@@ -89,7 +89,7 @@ fun MainScreen() {
 
     PieChart.EmotionPieChartDialog(
         show = showPieChart,
-        onDismiss = { showPieChart = false },
+        onDismiss = { },
         emotions = emotionHistory.toEmotions()
     )
 

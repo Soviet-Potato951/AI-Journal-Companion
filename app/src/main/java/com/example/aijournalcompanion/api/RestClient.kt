@@ -19,26 +19,6 @@ object RestClient {
     @Volatile
     private var baseUrl: String = "http://10.0.2.2:8000/"
 
-    fun setBaseUrl(url: String) {
-        val normalized = if (url.endsWith("/")) url else "$url/"
-        baseUrl = if (normalized.startsWith("http://") || normalized.startsWith("https://")) normalized
-        else "http://$normalized"
-    }
-
-    fun analyse(text: String, callback: (AiResult?, String?) -> Unit) {
-        CoroutineScope(Dispatchers.IO).launch {
-            val result = runCatching { analyzeBlocking(text) }
-            withContext(Dispatchers.Main) {
-                result.fold(
-                    onSuccess = { callback(it, null) },
-                    onFailure = { e ->
-                        val msg = e.message ?: "Unknown error"
-                        callback(null, msg)
-                    }
-                )
-            }
-        }
-    }
     suspend fun analyze(text: String): Result<AiResult> = withContext(Dispatchers.IO) {
         runCatching { analyzeBlocking(text) }
     }

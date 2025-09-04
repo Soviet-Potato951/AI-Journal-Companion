@@ -1,3 +1,5 @@
+@file:Suppress("COMPOSE_APPLIER_CALL_MISMATCH")
+
 package com.example.aijournalcompanion.ui.components
 
 import android.view.ViewGroup
@@ -36,10 +38,10 @@ fun HelpDialog() {
 
     if (!show) return
 
-    BackHandler(enabled = show) { show = false }
+    BackHandler(enabled = true) { show = false }
 
     Dialog(
-        onDismissRequest = { show = false },
+        onDismissRequest = { },
         properties = DialogProperties(
             usePlatformDefaultWidth = false, // we’ll control width/height
             dismissOnBackPress = true,
