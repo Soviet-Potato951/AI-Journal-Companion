@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Journal Companion - Help Guide</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          line-height: 1.6;
+          margin: 20px;
+          background: #f9f9f9;
+          color: #222;
+        }
+        h1, h2 {
+          color: #4a148c;
+        }
+        .faq {
+          margin: 20px 0;
+        }
+        .faq h3 {
+          margin: 10px 0 5px;
+          color: #333;
+        }
+        .faq p {
+          margin: 0 0 15px;
+        }
+        .instructions {
+          background: #fff;
+          border: 1px solid #ddd;
+          padding: 15px;
+          border-radius: 6px;
+        }
+        footer {
+          margin-top: 40px;
+          font-size: 0.9em;
+          color: #666;
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<h1>AI Journal Companion - Help & FAQ</h1>
+
+<div class="instructions">
+    <h2>Getting Started</h2>
+    <ol>
+        <li>Open the app and type your journal entry in the text field.</li>
+        <li>Tap <b>Analyze</b> to send it to the AI.</li>
+        <li>The AI will return your dominant emotion and a short piece of advice.</li>
+        <li>You can save multiple entries, sort them, and search them later.</li>
+        <li>Use the <b>Chart</b> button to view your emotions in a pie chart.</li>
+        <li>Drag and drop entries onto the trash icon to delete them.</li>
+    </ol>
+</div>
+
+<h2>FAQs</h2>
+
+<div class="faq">
+    <h3>1. What does the app do?</h3>
+    <p>The app analyzes your journal entries to detect emotions and provide short, supportive advice.</p>
+</div>
+
+<div class="faq">
+    <h3>2. How does the emotion analysis work?</h3>
+    <p>Your text is sent to a backend (FastAPI + Ollama model) which processes it and returns JSON with an emotion and advice.</p>
+</div>
+
+<div class="faq">
+    <h3>3. What emotions can it detect?</h3>
+    <p>It can detect common emotions such as <b>JOY, SADNESS, ANGER, FEAR, DISGUST, SURPRISE,</b> and <b>NEUTRAL</b>.</p>
+</div>
+
+<div class="faq">
+    <h3>4. Why can’t I open links in the Help page?</h3>
+    <p>This help guide is embedded and designed to stay inside the app. External links are disabled for simplicity.</p>
+</div>
+
+<div class="faq">
+    <h3>5. How do I sort and search my entries?</h3>
+    <p>You can choose sorting and searching methods from the dropdown menus. Sorting uses Bubble, Insertion, or Selection Sort. Searching uses Binary Tree, Hash Map, or Doubly Linked List.</p>
+</div>
+
+<div class="faq">
+    <h3>6. Can I reset or clear all entries?</h3>
+    <p>Yes. Use the drag-and-drop feature to delete entries one by one, or clear all from the options menu if available.</p>
+</div>
+
+<footer>
+    &copy; 2025 AI Journal Companion — Built with Kotlin, Jetpack Compose, and FastAPI.
+</footer>
+
+</body>
+</html>
